@@ -1,0 +1,52 @@
+body {
+  padding-top: 70px;
+}
+
+.valign {
+	vertical-align: middle;
+}
+#dummy {
+	position: absolute;
+	visibility: hidden;
+	whitespace: nowrap;
+	font-family: serif;
+}
+
+.starter-template {
+	padding: 0px 15px;
+}
+
+.social-networks {
+	padding: 20px 15px;
+	text-align: center;
+}
+
+
+/*
+ * CSS for less.html
+ */
+.left-div::before { 
+    content: "Less";
+}
+
+.right-div::before { 
+    content: "CSS";
+}
+.some-class {
+  color: #428bca;
+}
+.some-background {
+  background: #428bca;
+}
+.some-sidebar {
+  background: #428bca;
+}
+.demo-var {
+  color: #8bc3ed;
+}
+.demo-var-val {
+  color: #2aa198;
+}
+.demo-selector {
+  color: #284a80;
+}
