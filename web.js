@@ -124,16 +124,6 @@ app.get('/offline', function(request, response){
 
 
 
-// list
-app.get('/list', function(req, res){
-	fs.readFile('list.html', function(err, file) {
-		res.setHeader('Content-Type', 'text/html');
-		res.setHeader('Content-Length', file.length);
-		res.end(file);
-	});
-});
-
-
 /*
 {
 	user:UserId, 
