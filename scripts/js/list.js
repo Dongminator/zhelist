@@ -26,7 +26,7 @@ $(function() {
 // After FB SDK is loaded, this is run. 
 function CheckLogin () {
 	console.log("checking login...");
-	ToggleLoader (true, $(".fb-login-button"));
+	ToggleLoader (true, $(".welcome"));
 	FB.getLoginStatus(function(response) {
 		console.log(response);
 		if (response.status === 'connected') {
@@ -90,6 +90,7 @@ function Authenticated () {
 		$("#fb-logout-btn").removeClass("d-none").click(function(){
 			FbLogout();
 		});
+		$(".welcome").remove();
 		
 		ToggleLoader (false, $(".content"), function(){
 			$.each(todoIncomplete, function(i, item) {
