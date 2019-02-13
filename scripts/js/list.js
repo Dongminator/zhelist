@@ -109,8 +109,8 @@ function Authenticated () {
 
 function NotLoggedIn () {
 	console.log("NOT logged in. Making login button visible...");
-	ToggleLoader (false, $(".fb-login-button"), function(){
-		$(".fb-login-button").addClass("d-flex");
+	ToggleLoader (false, $(".welcome"), function(){
+		$(".welcome").addClass("d-flex");
 	});
 }
 
