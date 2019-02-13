@@ -11,6 +11,10 @@ body {
 	padding-top: 70px;
 }
 
+.content {
+	text-align: center;
+}
+
 .iconic-sprite {
 	width: 20px;
 	height: 20px;
