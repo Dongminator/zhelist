@@ -20,8 +20,54 @@ $(function() {
 //		$('.circle-loader').toggleClass('load-complete');
 //		$('.checkmark').toggle();
 //	});
-
+	
+	// get app id
+	getFacebookAppId(function(data){
+		loadFacebookSdk(data);
+	});
 });
+
+
+function loadFacebookSdk (appId) {
+	window.fbAsyncInit = function() {
+		console.log("FB.init()...");
+		FB.init({
+			appId : appId,
+			//cookie : true, // enable cookies to allow the server to access the session
+			xfbml : true, // parse social plugins on this page
+			version : 'v3.2'
+		});
+
+		// Now that we've initialized the JavaScript SDK, we call 
+		// FB.getLoginStatus().  This function gets the state of the
+		// person visiting this page and can return one of three states to
+		// the callback you provide.  They can be:
+		//
+		// 1. Logged into your app ('connected')
+		// 2. Logged into Facebook, but not your app ('not_authorized')
+		// 3. Not logged into Facebook and can't tell if they are logged into
+		//    your app or not.
+		//
+		// These three cases are handled in the callback function.
+		//FB.AppEvents.logPageView();
+		CheckLogin();
+	};
+	
+	// Load the SDK asynchronously
+	(function(d, s, id) {
+		console.log("Loading the SDK asynchronously...");
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {
+			return;
+		}
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "https://connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+}
+
+
 
 // After FB SDK is loaded, this is run. 
 function CheckLogin () {
@@ -355,3 +401,12 @@ function getByUserId (id, callback) {
 			});
 }
 
+function getFacebookAppId (callback) {
+	$.get("api/facebook-app-id", 
+		function(data) {
+			if (callback) {
+				callback(data);
+			}
+		}
+	);
+}

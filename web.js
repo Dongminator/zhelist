@@ -100,6 +100,9 @@ app.get('/tos', function(req, res){
 });
 
 
+app.get('/api/facebook-app-id', function (req, res) {
+	res.send(FB_APP_ID);
+})
 
 /*
  * JSON template
