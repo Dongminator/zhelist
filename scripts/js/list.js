@@ -241,7 +241,7 @@ function populateList (name, status, div) {
  * once save is confirmed, add item to list in ui, clear text in input
  */
 function addClicked() {
-	var addText = AddInput.val();
+	var addText = AddInput.val().trim();
 	// add to database
 	InsertToList(addText, InsertToListSuccess, InsertToListFail);
 }

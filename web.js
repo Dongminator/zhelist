@@ -413,14 +413,11 @@ function DeleteItem (json, callback) {
 	// Get the documents collection
 	const collection = mongodb.collection(dbCollectionName);
 	
-	console.log(json.name);
-	
 	collection.updateOne(
 		{"_id":helperBuildObjectId(json.user)},
 		{$pull: {"todo":{"name":json.name}}}, 
 		function(err, result) {
 			console.log("Delete document from the collection");
-			console.log(result.modifiedCount);
 			if (callback) {
 				console.log("has callback");
 				callback();
