@@ -1,14 +1,13 @@
 {
-  "name": "ZheList",
-  "version": "1.0.0",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.1.0",
-    "express": "*",
-    "mongodb": "^3.1.8"
-  },
-  "engines": {
-    "node": "latest",
-    "npm": "latest"
-  }
+    "name": "ZheList",
+    "version": "1.0.0",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "dotenv": "^6.1.0",
+        "express": "*",
+        "mongodb": "^3.7.3"
+    },
+    "engines": {
+        "node": "16.x"
+    }
 }
